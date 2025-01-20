@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.aws_instance_type
-  vpc_security_group_ids = [aws_security_group.web-sg.id]
+  vpc_security_group_ids = [aws_security_group.web-sg1.id]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -13,7 +13,7 @@ resource "aws_instance" "web" {
               EOF
 }
 
-resource "aws_security_group" "web-sg" {
+resource "aws_security_group" "web-sg1" {
   name = "web-sg"
   ingress {
     from_port   = 8080
