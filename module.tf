@@ -14,7 +14,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "web-sg1" {
-  name = "web-sg"
+  name = "web-sg1"
   ingress {
     from_port   = 8080
     to_port     = 8080
